@@ -68,8 +68,8 @@ class DeviceInfoPlusWindowsPlugin extends DeviceInfoPlatform {
       final releaseId = currentVersionKey.getValueAsString('ReleaseId') ?? '';
 
       final sqmClientKey = Registry.openPath(RegistryHive.localMachine,
-          path: r'SOFTWARE\Microsoft\SQMClient');
-      final machineId = sqmClientKey.getValueAsString('MachineId') ?? '';
+          path: r'SOFTWARE\Microsoft\Cryptography');
+      final machineId = sqmClientKey.getValueAsString('MachineGuid') ?? '';
 
       GetSystemInfo(systemInfo);
 
